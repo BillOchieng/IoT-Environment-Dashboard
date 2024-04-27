@@ -1,0 +1,19 @@
+- ./docs:
+  - report.md:
+    - description: Remove all TODOs from report.md
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Include at least 3 images in report.md
+      check: MatchFileRegex
+      options:
+        regex: (!|<img.*>|http)
+        count: 3
+        exact: false
+- description: At least three commits to repo
+  check: CountCommits
+  options:
+    count: 3
+
